@@ -1,3 +1,6 @@
 [submodule "ThirdParty/JSSC"]
 	path = ThirdParty/JSSC
 	url = https://github.com/FIUDiscoveryLab/JSSC.git
+[submodule "ThirdParty/SLF4J"]
+	path = ThirdParty/SLF4J
+	url = https://github.com/FIUDiscoveryLab/SLF4J.git

@@ -2,8 +2,14 @@ package discoverylab.telebot.slave.test;
 
 import static discoverylab.util.LogUtils.*;
 
-import discoverylab.telebot.slave.configurations.Config;
+import com.rti.dds.subscription.Subscriber;
 
+import TelebotDDSCore.Source.Java.Generated.master.hands.TMasterToHands;
+import TelebotDDSCore.Source.Java.Generated.master.hands.TMasterToHandsDataReader;
+import TelebotDDSCore.Source.Java.Generated.master.hands.TOPIC_MASTER_TO_SLAVE_HANDS;
+import discoverylab.telebot.slave.configurations.Config;
+import discoverylab.telebot.slave.listeners.TMasterToHandsListener;
+import discoverylab.telebot.slave.listeners.TSlaveHandsListener;
 /**
  * 
  * @author 	Irvin Steve Cardenas
@@ -15,6 +21,7 @@ public class Test {
 	public static String TAG = makeLogTag(Test.class);
 	
 	public static void main(String [] args){
+		
 		TelebotSlaveHands telebotSlaveHands = new TelebotSlaveHands(
 				Config.SERIAL_PORT_NAME, 
 				Config.SERIAL_BAUD_RATE,
@@ -23,6 +30,7 @@ public class Test {
 				Config.SERIAL_PARITY_TYPE,
 				Config.SERIAL_EVENT_MASK);
 		
+// 1. INITIATE Slave Component DEVICE
 		if( telebotSlaveHands.initiate()){
 			LOGI(TAG, "Hand Initiation Complete");
 		}
@@ -30,6 +38,7 @@ public class Test {
 			LOGI(TAG, "Hand Initiation Failed");
 		}
 		
+// 2. CALIBRATE
 		if( telebotSlaveHands.calibrate() ){
 			LOGI(TAG, "Hand Calibration Complete");
 		}
@@ -37,8 +46,17 @@ public class Test {
 			LOGI(TAG, "Hand Calibration Failed");
 		}
 		
-		if( telebotSlaveHands.beginProtocolSequence() ) {
-			
+// 3. INITIATE Transmission PROTOCOL
+		TSlaveHandsListener listener = new TSlaveHandsListener();
+		
+		if( telebotSlaveHands.initiateTransmissionProtocol(TOPIC_MASTER_TO_SLAVE_HANDS.VALUE, TMasterToHands.class, listener) ) {
+			LOGI(TAG, "Protocol Sequence Initiated");
 		}
+		else {
+			LOGI(TAG, "Protocol Sequence Failed");
+		}
+		
+// 4. INITIATE Transmission SEQUENCE		
+		
 	}
 }

@@ -1,4 +1,4 @@
-package discoverylab.telebot.slave.reader;
+package discoverylab.telebot.slave.core.readers;
 
 import jssc.SerialPort;
 
@@ -11,7 +11,11 @@ import com.rti.dds.subscription.SampleLostStatus;
 import com.rti.dds.subscription.SampleRejectedStatus;
 import com.rti.dds.subscription.SubscriptionMatchedStatus;
 
-
+/**
+ * 
+ * @author Irvin Steve Cardenas
+ *
+ */
 public abstract class CoreDataReaderAdapter extends DataReaderAdapter {
 	SerialPort serialPort = null;
 	

@@ -19,8 +19,13 @@ import com.rti.dds.subscription.SampleInfoSeq;
 import com.rti.dds.subscription.SampleStateKind;
 import com.rti.dds.subscription.ViewStateKind;
 
-import discoverylab.telebot.slave.reader.CoreDataReaderAdapter;
+import discoverylab.telebot.slave.core.readers.CoreDataReaderAdapter;
 
+/**
+ * 
+ * @author Irvin Steve Cardenas
+ *
+ */
 public class TMasterToHandsListener extends CoreDataReaderAdapter{
 	TMasterToHandsSeq dataSeq = new TMasterToHandsSeq();
 	SampleInfoSeq infoSeq = new SampleInfoSeq();

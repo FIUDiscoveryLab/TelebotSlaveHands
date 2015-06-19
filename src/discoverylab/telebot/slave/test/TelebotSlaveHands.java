@@ -3,8 +3,13 @@ package discoverylab.telebot.slave.test;
 import com.rti.dds.topic.Topic;
 
 import jssc.SerialPort;
-import discoverylab.telebot.slave.interfaces.CoreSlaveComponent;
+import discoverylab.telebot.slave.core.CoreSlaveComponent;
 
+/**
+ * 
+ * @author Irvin Steve Cardenas
+ *
+ */
 public class TelebotSlaveHands extends CoreSlaveComponent{
 
 	public TelebotSlaveHands(SerialPort serialPort){
@@ -20,29 +25,5 @@ public class TelebotSlaveHands extends CoreSlaveComponent{
 	public boolean calibrate() {
 		// TODO Auto-generated method stub
 		return true;
-	}
-
-	@Override
-	public void write() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setTopic(Topic topic) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setReader() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setListener() {
-		// TODO Auto-generated method stub
-		
 	}
 }

@@ -1,4 +1,4 @@
-package discoverylab.telebot.slave.interfaces;
+package discoverylab.telebot.slave.core;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -14,11 +14,16 @@ import com.rti.dds.subscription.DataReaderImpl;
 import com.rti.dds.subscription.Subscriber;
 import com.rti.dds.topic.Topic;
 
-import discoverylab.telebot.slave.reader.CoreDataReaderAdapter;
+import discoverylab.telebot.slave.core.readers.CoreDataReaderAdapter;
 import jssc.SerialPort;
 import jssc.SerialPortException;
 import static discoverylab.util.LogUtils.*;
 
+/**
+ * 
+ * @author Irvin Steve Cardenas
+ *
+ */
 public abstract class CoreSlaveComponent {
 
 	public static String TAG = makeLogTag("CoreComponent");
@@ -75,12 +80,6 @@ public abstract class CoreSlaveComponent {
 		
 		serialPort = new SerialPort(serialPortName);
 	}
-	
-	public abstract void setTopic(Topic topic);
-	
-	public abstract void setReader();
-	
-	public abstract void setListener();
 	
 	/**
 	 * Slave Hands Initiate - Open Hand Serial Connection
@@ -161,7 +160,6 @@ public abstract class CoreSlaveComponent {
 		//TODO Get assertion of Participant
 		return false;
 	}
-	public abstract void write();
 
 	private static CoreDataReaderAdapter getListener() {
 		return listener;

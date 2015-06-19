@@ -2,6 +2,11 @@ package discoverylab.telebot.slave.configurations;
 
 import jssc.SerialPort;
 
+/**
+ * 
+ * @author Irvin Steve Cardenas
+ *
+ */
 public class Config {
 	
 	public static final String	AUTHORS				= 	"Irvin Steve Cardenas @kPatch";

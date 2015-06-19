@@ -13,4 +13,22 @@ public class TelebotSlaveHands extends CoreComponent{
 			int stopBits, int parityType, int eveMask) {
 		super(serialPortName, baudRate, dataBits, stopBits, parityType, eveMask);
 	}
+
+	@Override
+	public boolean calibrate() {
+		// TODO Auto-generated method stub
+		return true;
+	}
+
+	@Override
+	public boolean beginProtocolSequence() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void write() {
+		// TODO Auto-generated method stub
+		
+	}
 }

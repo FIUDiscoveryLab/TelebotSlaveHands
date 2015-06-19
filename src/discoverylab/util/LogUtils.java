@@ -1,10 +1,11 @@
 package discoverylab.util;
-import java.util.logging.Logger;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 public class LogUtils {
 	
-	private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
-
+//	private final static Logger LOGGER = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME); Java Utils Logger = No Bueno
+	private final static Logger logger = LoggerFactory.getLogger(LogUtils.class);
 	
 	private static final String LOG_PREFIX = "discoverylab";
 	private static final int LOG_PREFIX_LENGTH = LOG_PREFIX.length();
@@ -21,6 +22,23 @@ public class LogUtils {
 		return makeLogTag(cls.getSimpleName());
 	}
 	
+	public static void LOGI(final String tag, String message) {
+		logger.info(tag, message);
+	}
+	
+	public static void LOGI(final String tag, String message, Throwable cause) {
+		logger.info(tag, message, cause);
+	}
+	
 	public static void LOGE(final String tag, String message){
+		logger.error(tag, message);
+	}
+	
+	public static void LEGE(final String tag, String message, Throwable cause){
+		logger.error(tag, message, cause);
+	}
+	
+	private LogUtils() {
+		
 	}
 }

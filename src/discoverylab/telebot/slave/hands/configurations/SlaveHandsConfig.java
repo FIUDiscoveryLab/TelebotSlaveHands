@@ -9,7 +9,7 @@ import jssc.SerialPort;
  */
 public class SlaveHandsConfig {
 	
-	public static final String 	DEFAULT_SERIAL_PORT_NAME 	=	"/dev/ttyTelebotHands";
+	public static final String 	DEFAULT_SERIAL_PORT_NAME 	=	"/dev/TelebotHands";
 	public static final int 	DEFAULT_SERIAL_BAUD_RATE 	=	57600;
 	public static final int 	DEFAULT_SERIAL_DATA_BITS 	=	SerialPort.DATABITS_8;
 	public static final int		DEFAULT_SERIAL_STOP_BITS 	=	SerialPort.STOPBITS_1;

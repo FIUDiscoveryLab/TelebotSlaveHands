@@ -58,6 +58,6 @@ public class TelebotSlaveHandsTest {
 		}
 		
 // 4. INITIATE Transmission SEQUENCE		
-		
+		LOGI(TAG, "Iniating Transmission Sequence");
 	}
 }

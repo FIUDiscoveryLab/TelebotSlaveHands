@@ -27,6 +27,7 @@ import discoverylab.telebot.slave.core.readers.CoreDataReaderAdapter;
  *
  */
 public class TMasterToHandsListener extends CoreDataReaderAdapter{
+	/*
 	TMasterToHandsSeq dataSeq = new TMasterToHandsSeq();
 	SampleInfoSeq infoSeq = new SampleInfoSeq();
 	
@@ -40,7 +41,7 @@ public class TMasterToHandsListener extends CoreDataReaderAdapter{
 	public TMasterToHandsListener(){
 		
 		serialPort = new SerialPort("/dev/ttyACM0");
-/*		try {
+		try {
 			serialPort.openPort();
 			serialPort.setParams(57600, SerialPort.DATABITS_8, SerialPort.STOPBITS_1, SerialPort.PARITY_NONE);
 			serialPort.setEventsMask(SerialPort.MASK_RXCHAR);
@@ -48,7 +49,7 @@ public class TMasterToHandsListener extends CoreDataReaderAdapter{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		*/
+		
 		// add an event listener, which is the subclass at the
 		// bottom of this file
 
@@ -96,5 +97,5 @@ public class TMasterToHandsListener extends CoreDataReaderAdapter{
         	tMasterToHandsDataReader.return_loan(dataSeq, infoSeq);
         }
 	}
-	
+	*/
 }

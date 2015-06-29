@@ -24,12 +24,12 @@ public class TelebotSlaveHandsTest {
 	public static void main(String [] args){
 		
 		TelebotSlaveHands telebotSlaveHands = new TelebotSlaveHands(
-				SlaveHandsConfig.DEFAULT_SERIAL_PORT_NAME, 
-				SlaveHandsConfig.DEFAULT_SERIAL_BAUD_RATE,
-				SlaveHandsConfig.DEFAULT_SERIAL_DATA_BITS,
-				SlaveHandsConfig.DEFAULT_SERIAL_STOP_BITS,
-				SlaveHandsConfig.DEFAULT_SERIAL_PARITY_TYPE,
-				SlaveHandsConfig.DEFAULT_SERIAL_EVENT_MASK);
+				  SlaveHandsConfig.DEFAULT_SERIAL_PORT_NAME
+				, SlaveHandsConfig.DEFAULT_SERIAL_BAUD_RATE
+				, SlaveHandsConfig.DEFAULT_SERIAL_DATA_BITS
+				, SlaveHandsConfig.DEFAULT_SERIAL_STOP_BITS
+				, SlaveHandsConfig.DEFAULT_SERIAL_PARITY_TYPE
+				, SlaveHandsConfig.DEFAULT_SERIAL_EVENT_MASK);
 		
 // 1. INITIATE Slave Component DEVICE
 		if( telebotSlaveHands.initiate()){
@@ -50,7 +50,9 @@ public class TelebotSlaveHandsTest {
 // 3. INITIATE Transmission PROTOCOL
 		TSlaveHandsListener listener = new TSlaveHandsListener();
 		
-		if( telebotSlaveHands.initiateTransmissionProtocol(TOPIC_MASTER_TO_SLAVE_HANDS.VALUE, TMasterToHands.class, listener) ) {
+		if( telebotSlaveHands.initiateTransmissionProtocol(
+				  TOPIC_MASTER_TO_SLAVE_HANDS.VALUE
+				, TMasterToHands.class, listener) ) {
 			LOGI(TAG, "Protocol Sequence Initiated");
 		}
 		else {

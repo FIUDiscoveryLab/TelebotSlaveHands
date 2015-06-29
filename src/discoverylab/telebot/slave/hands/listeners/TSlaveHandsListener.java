@@ -1,4 +1,4 @@
-package discoverylab.telebot.slave.listeners;
+package discoverylab.telebot.slave.hands.listeners;
 
 import jssc.SerialPortException;
 import TelebotDDSCore.Source.Java.Generated.master.hands.TMasterToHands;

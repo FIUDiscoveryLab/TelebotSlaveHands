@@ -1,4 +1,4 @@
-package discoverylab.telebot.slave.test;
+package discoverylab.telebot.slave.hands.test;
 
 import static discoverylab.util.LogUtils.*;
 
@@ -8,27 +8,28 @@ import TelebotDDSCore.Source.Java.Generated.master.hands.TMasterToHands;
 import TelebotDDSCore.Source.Java.Generated.master.hands.TMasterToHandsDataReader;
 import TelebotDDSCore.Source.Java.Generated.master.hands.TOPIC_MASTER_TO_SLAVE_HANDS;
 import discoverylab.telebot.slave.configurations.Config;
-import discoverylab.telebot.slave.listeners.TMasterToHandsListener;
-import discoverylab.telebot.slave.listeners.TSlaveHandsListener;
+import discoverylab.telebot.slave.hands.configurations.SlaveHandsConfig;
+import discoverylab.telebot.slave.hands.listeners.TMasterToHandsListener;
+import discoverylab.telebot.slave.hands.listeners.TSlaveHandsListener;
 /**
  * 
  * @author 	Irvin Steve Cardenas
  * @twitter	kPatch
  *
  */
-public class Test {
+public class TelebotSlaveHandsTest {
 	
-	public static String TAG = makeLogTag(Test.class);
+	public static String TAG = makeLogTag(TelebotSlaveHandsTest.class);
 	
 	public static void main(String [] args){
 		
 		TelebotSlaveHands telebotSlaveHands = new TelebotSlaveHands(
-				Config.SERIAL_PORT_NAME, 
-				Config.SERIAL_BAUD_RATE,
-				Config.SERIAL_DATA_BITS,
-				Config.SERIAL_STOP_BITS,
-				Config.SERIAL_PARITY_TYPE,
-				Config.SERIAL_EVENT_MASK);
+				SlaveHandsConfig.DEFAULT_SERIAL_PORT_NAME, 
+				SlaveHandsConfig.DEFAULT_SERIAL_BAUD_RATE,
+				SlaveHandsConfig.DEFAULT_SERIAL_DATA_BITS,
+				SlaveHandsConfig.DEFAULT_SERIAL_STOP_BITS,
+				SlaveHandsConfig.DEFAULT_SERIAL_PARITY_TYPE,
+				SlaveHandsConfig.DEFAULT_SERIAL_EVENT_MASK);
 		
 // 1. INITIATE Slave Component DEVICE
 		if( telebotSlaveHands.initiate()){

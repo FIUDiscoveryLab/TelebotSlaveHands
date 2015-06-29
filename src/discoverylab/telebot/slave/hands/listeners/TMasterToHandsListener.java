@@ -1,4 +1,4 @@
-package discoverylab.telebot.slave.listeners;
+package discoverylab.telebot.slave.hands.listeners;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

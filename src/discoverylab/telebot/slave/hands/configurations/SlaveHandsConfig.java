@@ -1,4 +1,4 @@
-package discoverylab.telebot.slave.core;
+package discoverylab.telebot.slave.hands.configurations;
 
 import jssc.SerialPort;
 
@@ -7,7 +7,7 @@ import jssc.SerialPort;
  * @author Irvin Steve Cardenas
  *
  */
-public class CoreHandsConfig {
+public class SlaveHandsConfig {
 	
 	public static final String 	DEFAULT_SERIAL_PORT_NAME 	=	"/dev/ttyTelebotHands";
 	public static final int 	DEFAULT_SERIAL_BAUD_RATE 	=	57600;

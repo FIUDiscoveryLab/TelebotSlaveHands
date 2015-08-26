@@ -47,7 +47,13 @@ public class TSlaveHandsListener extends CoreDataReaderAdapter{
 							command.lMiddle + " " +
 							command.lIndex + " " +
 							command.lThumbFlexion + " " +
-							command.lThumbOpposition + "\r";
+							command.lThumbOpposition + " " +
+							command.rThumbFlexion + " " + 
+							command.rThumbOpposition + " " + 
+							command.rIndex + " " +
+							command.rMiddle + " " +
+							command.rRing + " " +
+							command.rPinky + "\r"; 
 					
 					System.out.println(commandStr);
 					getSerialPort().writeString(commandStr);
